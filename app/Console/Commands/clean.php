@@ -60,25 +60,14 @@ class clean extends Command
         $user->save();
 
 
-        $user = new User();
-        $user->name = 'Basharat Ali';
-        $user->username = 'basharat604';
-        $user->email = 'basharat604@gmail.com';
-        $user->refer = 'shakeel2717';
-        $user->password = Hash::make('asdfasdf');
-        $user->role = 'user';
-        $user->save();
-
-
         $plan = new Plan();
         $plan->name = 'STATER';
         $plan->price = 10;
         $plan->profit = 25;
         $plan->total = '500';
+        $plan->ads = 15;
         $plan->duration = '360';
         $plan->withdraw = '600';
-        $plan->direct = '70';
-        $plan->indirect = '30';
         $plan->status = 1;
         $plan->save();
 
@@ -87,10 +76,9 @@ class clean extends Command
         $plan->price = 20;
         $plan->profit = 50;
         $plan->total = '1000';
+        $plan->ads = 15;
         $plan->duration = '360';
         $plan->withdraw = '600';
-        $plan->direct = '150';
-        $plan->indirect = '70';
         $plan->status = 1;
         $plan->save();
 
@@ -99,10 +87,9 @@ class clean extends Command
         $plan->price = 50;
         $plan->profit = 120;
         $plan->total = '2000';
+        $plan->ads = 15;
         $plan->duration = 360;
         $plan->withdraw = '600';
-        $plan->direct = '200';
-        $plan->indirect = '70';
         $plan->status = 1;
         $plan->save();
 
@@ -111,10 +98,9 @@ class clean extends Command
         $plan->price = 100;
         $plan->profit = 270;
         $plan->total = '5400';
+        $plan->ads = 15;
         $plan->duration = '360';
         $plan->withdraw = '600';
-        $plan->direct = '210';
-        $plan->indirect = '70';
         $plan->status = 1;
         $plan->save();
 
@@ -123,10 +109,9 @@ class clean extends Command
         $plan->price = 250;
         $plan->profit = 1300;
         $plan->total = '26000';
+        $plan->ads = 15;
         $plan->duration = '360';
         $plan->withdraw = '600';
-        $plan->direct = '900';
-        $plan->indirect = '900';
         $plan->status = 1;
         $plan->save();
 
@@ -135,11 +120,9 @@ class clean extends Command
         $plan->price = 500;
         $plan->profit = 2500;
         $plan->total = '50000';
+        $plan->ads = 15;
         $plan->duration = '360';
         $plan->withdraw = '600';
-        $plan->direct = '1500';
-        $plan->indirect = '1500';
-        $plan->indirect1 = '1500';
         $plan->status = 1;
         $plan->save();
 

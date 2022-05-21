@@ -19,11 +19,9 @@ class CreatePlansTable extends Migration
             $table->string('price');
             $table->string('profit');
             $table->string('total');
+            $table->string('ads');
             $table->string('duration');
             $table->string('withdraw');
-            $table->string('direct');
-            $table->string('indirect');
-            $table->string('indirect1')->nullable();
             $table->boolean('status')->default(1);
             $table->timestamps();
         });

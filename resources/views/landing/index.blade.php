@@ -158,6 +158,7 @@
                                             class="fa fa-check"></i></li>
                                     <li>Plan Duration: <strong>{{ $plan->duration }} Days</strong> <i
                                             class="fa fa-check"></i></li>
+                                    <li>Daily Ads: <strong>{{ $plan->ads }}</strong> <i class="fa fa-check"></i></li>
                                     <li>Direct Commission: <strong>{{ $plan->direct }} PKR</strong> <i
                                             class="fa fa-check"></i></li>
                                     <li>In-Direct Comm.: <strong>{{ $plan->indirect }} PKR</strong> <i
