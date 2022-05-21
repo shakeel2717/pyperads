@@ -149,7 +149,7 @@
                                     <img src="{{ asset('assets/images/crown.png') }}" alt="Office">
                                 </div>
                                 <div class="title">{{ $plan->name }}</div>
-                                <div class="price">${{ number_format($plan->price, 0) }}<span
+                                <div class="price">Rs: {{ number_format($plan->price, 0) }}<span
                                         class="period">/{{ $plan->duration }}D</span></div>
                             </div>
                             <div class="body-part">
