@@ -11,7 +11,8 @@
 
             <div class="row mr-0 ml-0 h-100">
                 <h3 class="text-center mt-3">Please Wait: <span id="timer">9</span> </h3>
-                <iframe src="{{ $ad->link }}" frameborder="0" height="740"></iframe>
+                {{ $ad->link }}
+                {{-- <iframe src="{{ $ad->link }}" frameborder="0" height="740"></iframe> --}}
             </div>
         </div>
     </div>
@@ -19,12 +20,12 @@
 @section('footer')
     <script>
         var time = 9;
-        var interval = setInterval(function () {
+        var interval = setInterval(function() {
             time--;
             document.getElementById("timer").innerHTML = time;
             if (time <= 0) {
                 clearInterval(interval);
-                window.location.href = "{{ route('user.ads.edit',['ad' => $ad->id]) }}";
+                window.location.href = "{{ route('user.ads.edit', ['ad' => $ad->id]) }}";
             }
         }, 1000);
     </script>
