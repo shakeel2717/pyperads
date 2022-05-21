@@ -200,6 +200,56 @@ class clean extends Command
         $ads->link = "https://bitcoincash.org";
         $ads->save();
 
+        $ads = new Ads();
+        $ads->title = "Dash";
+        $ads->link = "https://dash.org";
+        $ads->save();
+
+        $ads = new Ads();
+        $ads->title = "Monero";
+        $ads->link = "https://getmonero.org";
+        $ads->save();
+
+        $ads = new Ads();
+        $ads->title = "EOS";
+        $ads->link = "https://eos.io";
+        $ads->save();
+
+        $ads = new Ads();
+        $ads->title = "Stellar";
+        $ads->link = "https://www.stellar.org";
+        $ads->save();
+
+        $ads = new Ads();
+        $ads->title = "NEM";
+        $ads->link = "https://www.nem.io";
+        $ads->save();
+
+        $ads = new Ads();
+        $ads->title = "IOTA";
+        $ads->link = "https://www.iota.org";
+        $ads->save();
+
+        $ads = new Ads();
+        $ads->title = "Cardano";
+        $ads->link = "https://www.cardano.org";
+        $ads->save();
+
+        $ads = new Ads();
+        $ads->title = "TRON";
+        $ads->link = "https://www.tron.network";
+        $ads->save();
+
+        $ads = new Ads();
+        $ads->title = "NEO";
+        $ads->link = "https://neo.org";
+        $ads->save();
+
+        $ads = new Ads();
+        $ads->title = "Qtum";
+        $ads->link = "https://qtum.org";
+        $ads->save();
+
         return Command::SUCCESS;
     }
 }

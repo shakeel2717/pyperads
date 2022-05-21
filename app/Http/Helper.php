@@ -4,6 +4,7 @@
 use App\Models\Transaction;
 use App\Models\User;
 use App\Models\UserPlan;
+use Carbon\Carbon;
 
 function generate_user_code($userType)
 {
@@ -112,7 +113,7 @@ function getPlan($user)
 function watchedAds($user)
 {
     $ads = [];
-    $transactions = Transaction::where('user_id', auth()->user()->id)->where('type', 'daily ads')->get();
+    $transactions = Transaction::where('user_id', auth()->user()->id)->whereDate('created_at', '>=', Carbon::today())->where('type', 'daily ads')->get();
     foreach ($transactions as $transaction) {
         $ads[] = $transaction->ad_id;
     }
