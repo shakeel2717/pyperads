@@ -131,6 +131,7 @@
                     <a href="{{ route('admin.pending') }}" class="readon2 m-1">Pending Withdraw</a>
                     <a href="{{ route('admin.commission') }}" class="readon2 m-1">Commission</a>
                     <a href="{{ route('admin.profit') }}" class="readon2 m-1">Profit</a>
+                    <a href="{{ route('admin.ads.index') }}" class="readon2 m-1">Ads Manager</a>
                 </div>
             </div>
             <hr>

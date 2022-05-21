@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\admin\AdminDashboardController;
+use App\Http\Controllers\admin\AdsController;
 use App\Http\Controllers\AdminAuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -11,15 +12,17 @@ Route::prefix('admin/dashboard')->name('admin.')->middleware(['admin'])->group(f
     Route::get('/users/suspend/{user}', [AdminDashboardController::class, 'userSuspend'])->name('userSuspend');
     Route::get('/users/activate/{user}', [AdminDashboardController::class, 'userActivate'])->name('userActivate');
     Route::get('/users/userPassword/{user}', [AdminDashboardController::class, 'userPassword'])->name('userPassword');
-    
+
+    Route::resource('ads', AdsController::class);
+
     Route::get('/tids', [AdminDashboardController::class, 'allTids'])->name('allTids');
     Route::get('/pendingTids', [AdminDashboardController::class, 'pendingTids'])->name('pendingTids');
     Route::get('/pendingTids/{tid}', [AdminDashboardController::class, 'pendingTidsApprove'])->name('pendingTidsApprove');
-    
+
     Route::get('/plans', [AdminDashboardController::class, 'allPlans'])->name('allPlans');
     Route::get('/plans/{id}',[AdminDashboardController::class,'PlanEdit'])->name('PlanEdit');
     Route::post('/userPlanStore',[AdminDashboardController::class,'userPlanStore'])->name('userPlanStore');
-    
+
     Route::get('/transaction', [AdminDashboardController::class, 'allTransaction'])->name('allTransaction');
     Route::get('/adminPlans', [AdminDashboardController::class, 'adminplans'])->name('adminplans');
     Route::get('/methods', [AdminDashboardController::class, 'methods'])->name('methods');
@@ -37,14 +40,14 @@ Route::prefix('admin/dashboard')->name('admin.')->middleware(['admin'])->group(f
     // Withdraw System
     Route::get('/withdraw/approve/{transaction}', [AdminDashboardController::class, 'withdrawApproveReq'])->name('withdrawApproveReq');
     Route::get('/withdraw/reject/{transaction}', [AdminDashboardController::class, 'withdrawRejectReq'])->name('withdrawRejectReq');
-    
-    
-    
-    
+
+
+
+
     Route::post('/addBalance', [AdminDashboardController::class, 'addBalance'])->name('addBalance');
     Route::post('/activtePlanReq', [AdminDashboardController::class, 'activtePlanReq'])->name('activtePlanReq');
-    
-    
+
+
 });
 
 
