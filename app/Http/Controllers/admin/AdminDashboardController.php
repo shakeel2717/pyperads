@@ -122,6 +122,8 @@ class AdminDashboardController extends Controller
         if ($user->refer != 'default') {
             $refer = User::where('username', $user->refer)->where('status', 'active')->first();
             if ($refer != '') {
+                // getting commisison
+                $option = Option::where('type', 'commission')->first();
                 // inserting new commission transaction
                 $transaction = new Transaction();
                 $transaction->user_id = $refer->id;
@@ -129,37 +131,8 @@ class AdminDashboardController extends Controller
                 $transaction->status = 'approved';
                 $transaction->sum = 'in';
                 // getting commission
-                $transaction->amount = $tid->plan->direct;
+                $transaction->amount = $option->value * $tid->plan->price / 100;
                 $transaction->save();
-
-                // checking if this user has a valid refer
-                $refer1 = User::where('username', $refer->refer)->where('status', 'active')->first();
-                if ($refer1 != '') {
-                    // inserting new commission transaction
-                    $transaction = new Transaction();
-                    $transaction->user_id = $refer1->id;
-                    $transaction->type = 'commission';
-                    $transaction->status = 'approved';
-                    $transaction->sum = 'in';
-                    // getting commission
-                    $transaction->amount = $tid->plan->indirect;
-                    $transaction->save();
-                    if ($tid->plan->name == "DIAMOND") {
-                        // checking if this user has a valid refer
-                        $refer2 = User::where('username', $refer1->refer)->where('status', 'active')->first();
-                        if ($refer2 != '') {
-                            // inserting new commission transaction
-                            $transaction = new Transaction();
-                            $transaction->user_id = $refer2->id;
-                            $transaction->type = 'commission';
-                            $transaction->status = 'approved';
-                            $transaction->sum = 'in';
-                            // getting commission
-                            $transaction->amount = $tid->plan->indirect1;
-                            $transaction->save();
-                        }
-                    }
-                }
             }
         }
 
