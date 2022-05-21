@@ -18,7 +18,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
-                            <form action="{{ route('admin.ads.update',['ad' => $ad->id]) }}" method="POST">
+                            <form action="{{ route('admin.ads.update', ['ad' => $ad->id]) }}" method="POST">
                                 @method('PUT')
                                 @csrf
                                 <div class="form-group">
@@ -27,8 +27,10 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="link">Ad Link</label>
-                                    <input type="text" name="link" class="form-control" value="{{ $ad->link }}">
+                                    <label for="link">Ad Link / Ad Code</label>
+                                    <textarea name="link" id="link" cols="30" rows="10">
+                                        {{ $ad->link }}
+                                    </textarea>
                                 </div>
 
                                 <div class="form-group">
