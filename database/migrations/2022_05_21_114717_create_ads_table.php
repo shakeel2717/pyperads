@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class AddShakeelToTransactionsTable extends Migration
+class CreateAdsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,8 +13,12 @@ class AddShakeelToTransactionsTable extends Migration
      */
     public function up()
     {
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->string('shakeel')->nullable();
+        Schema::create('ads', function (Blueprint $table) {
+            $table->id();
+            $table->string('title');
+            $table->string('link');
+            $table->string('status')->default(1);
+            $table->timestamps();
         });
     }
 
@@ -25,8 +29,6 @@ class AddShakeelToTransactionsTable extends Migration
      */
     public function down()
     {
-        Schema::table('transactions', function (Blueprint $table) {
-            $table->dropColumn('shakeel');
-        });
+        Schema::dropIfExists('ads');
     }
 }

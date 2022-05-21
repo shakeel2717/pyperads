@@ -88,3 +88,34 @@ function profitBlockchainAlready()
         return false;
     }
 }
+
+
+// checking if this  user has valid plan active
+function planValidation($user)
+{
+    $plan = UserPlan::where('user_id', $user)->where('status', 'active')->first();
+    if ($plan) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
+
+function getPlan($user)
+{
+    $plan = UserPlan::where('user_id', $user)->where('status', 'active')->first();
+    return $plan->plan_id;
+}
+
+
+function watchedAds($user)
+{
+    $ads = [];
+    $transactions = Transaction::where('user_id', auth()->user()->id)->where('type', 'daily ads')->get();
+    foreach ($transactions as $transaction) {
+        $ads[] = $transaction->ad_id;
+    }
+
+    return $ads;
+}

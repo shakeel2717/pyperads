@@ -100,16 +100,6 @@ class AdminDashboardController extends Controller
         // inserting a deposit transaction
         $transaction = new Transaction();
         $transaction->user_id = $tid->user_id;
-        $transaction->type = 'bonus';
-        $transaction->status = 'approved';
-        $transaction->sum = 'in';
-        $transaction->amount = 50;
-        $transaction->save();
-
-
-        // inserting a deposit transaction
-        $transaction = new Transaction();
-        $transaction->user_id = $tid->user_id;
         $transaction->type = 'plan activate';
         $transaction->status = 'approved';
         $transaction->sum = 'out';

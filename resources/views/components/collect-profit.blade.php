@@ -3,11 +3,11 @@
         <div class="card my-3">
             <div class="card-body d-flex justify-content-center flex-column align-items-center">
                 <div class="image">
-                    <img src="{{ asset('assets/icons/spin.png') }}" alt="Profit" class="mb-4" id="spinImage">
+                    <img src="{{ asset('assets/icons/ads.jpg') }}" alt="Profit" class="mb-4" width="150">
                 </div>
                 <div class="button">
                     <div class="btn-part text-center">
-                        <a class="readon consultant discover bg-success" id="spinStart" href="{{ route('user.blockchain') }}">Spin and Earn</a>
+                        <a class="readon consultant discover bg-success" id="spinStart" href="{{ route('user.ads.index') }}">Watch Ads</a>
                     </div>
                 </div>
             </div>

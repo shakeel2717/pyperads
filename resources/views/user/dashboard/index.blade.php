@@ -155,19 +155,6 @@
                 $('#referCommission').select();
                 document.execCommand('copy');
             });
-
-
-            $("#spinStart").click(function() {
-                // spin image
-                var img = document.getElementById('spinImage');
-                var degrees = 0;
-                var timer = setInterval(function() {
-                    degrees += 5;
-                    img.style.transform = 'rotate(' + degrees + 'deg)';
-                }, 10);
-
-            });
-
         });
     </script>
 @endsection

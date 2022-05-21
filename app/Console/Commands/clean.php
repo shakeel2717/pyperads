@@ -3,6 +3,7 @@
 namespace App\Console\Commands;
 
 use App\Models\admin;
+use App\Models\Ads;
 use App\Models\Method;
 use App\Models\Option;
 use App\Models\Plan;
@@ -62,9 +63,9 @@ class clean extends Command
 
         $plan = new Plan();
         $plan->name = 'STATER';
-        $plan->price = 10;
-        $plan->profit = 25;
-        $plan->total = '500';
+        $plan->price = 1500;
+        $plan->profit = 80;
+        $plan->total = '3000';
         $plan->ads = 15;
         $plan->duration = '360';
         $plan->withdraw = '600';
@@ -73,9 +74,9 @@ class clean extends Command
 
         $plan = new Plan();
         $plan->name = 'PREMIUM';
-        $plan->price = 20;
-        $plan->profit = 50;
-        $plan->total = '1000';
+        $plan->price = 5000;
+        $plan->profit = 100;
+        $plan->total = '18000';
         $plan->ads = 15;
         $plan->duration = '360';
         $plan->withdraw = '600';
@@ -84,9 +85,9 @@ class clean extends Command
 
         $plan = new Plan();
         $plan->name = 'PRO';
-        $plan->price = 50;
-        $plan->profit = 120;
-        $plan->total = '2000';
+        $plan->price = 10000;
+        $plan->profit = 200;
+        $plan->total = '36000';
         $plan->ads = 15;
         $plan->duration = 360;
         $plan->withdraw = '600';
@@ -95,9 +96,9 @@ class clean extends Command
 
         $plan = new Plan();
         $plan->name = 'ULTIMATE';
-        $plan->price = 100;
-        $plan->profit = 270;
-        $plan->total = '5400';
+        $plan->price = 15000;
+        $plan->profit = 300;
+        $plan->total = '54000';
         $plan->ads = 15;
         $plan->duration = '360';
         $plan->withdraw = '600';
@@ -106,9 +107,9 @@ class clean extends Command
 
         $plan = new Plan();
         $plan->name = 'SUPER';
-        $plan->price = 250;
-        $plan->profit = 1300;
-        $plan->total = '26000';
+        $plan->price = 20000;
+        $plan->profit = 400;
+        $plan->total = '72000';
         $plan->ads = 15;
         $plan->duration = '360';
         $plan->withdraw = '600';
@@ -117,9 +118,32 @@ class clean extends Command
 
         $plan = new Plan();
         $plan->name = 'DIAMOND';
-        $plan->price = 500;
-        $plan->profit = 2500;
-        $plan->total = '50000';
+        $plan->price = 30000;
+        $plan->profit = 600;
+        $plan->total = '108000';
+        $plan->ads = 15;
+        $plan->duration = '360';
+        $plan->withdraw = '600';
+        $plan->status = 1;
+        $plan->save();
+
+        $plan = new Plan();
+        $plan->name = 'FUTURE';
+        $plan->price = 40000;
+        $plan->profit = 900;
+        $plan->total = '168000';
+        $plan->ads = 15;
+        $plan->duration = '360';
+        $plan->withdraw = '600';
+        $plan->status = 1;
+        $plan->save();
+
+
+        $plan = new Plan();
+        $plan->name = 'LEGEND';
+        $plan->price = 50000;
+        $plan->profit = 10000;
+        $plan->total = '240000';
         $plan->ads = 15;
         $plan->duration = '360';
         $plan->withdraw = '600';
@@ -139,15 +163,42 @@ class clean extends Command
         // inserting website options
         $option = new Option();
         $option->type = 'commission';
-        $option->value = 18;
+        $option->value = 10;
         $option->save();
 
 
         // inserting admin
         $admin = new admin();
-        $admin->username = "umar";
-        $admin->password = "snapdragon720";
+        $admin->username = "test";
+        $admin->password = "test";
         $admin->save();
+
+
+        // generating Ads
+        $ads = new Ads();
+        $ads->title = "Tether";
+        $ads->link = "https://tether.to";
+        $ads->save();
+
+        $ads = new Ads();
+        $ads->title = "Bitcoin";
+        $ads->link = "https://bitcoin.org";
+        $ads->save();
+
+        $ads = new Ads();
+        $ads->title = "Ethereum";
+        $ads->link = "https://ethereum.org";
+        $ads->save();
+
+        $ads = new Ads();
+        $ads->title = "Litecoin";
+        $ads->link = "https://litecoin.org";
+        $ads->save();
+
+        $ads = new Ads();
+        $ads->title = "Bitcoin Cash";
+        $ads->link = "https://bitcoincash.org";
+        $ads->save();
 
         return Command::SUCCESS;
     }
