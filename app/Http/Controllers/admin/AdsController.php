@@ -74,7 +74,7 @@ class AdsController extends Controller
     {
         $validatedData = $request->validate([
             'title' => 'string|required',
-            'link' => 'url|required',
+            'link' => 'string|required',
         ]);
 
         $ad = Ads::find($id);

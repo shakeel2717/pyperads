@@ -28,9 +28,7 @@
 
                                 <div class="form-group">
                                     <label for="link">Ad Link / Ad Code</label>
-                                    <textarea name="link" id="link" cols="30" rows="10">
-                                        {{ $ad->link }}
-                                    </textarea>
+                                    <textarea name="link" id="link" cols="30" rows="10" class="form-control">{{ $ad->link }}</textarea>
                                 </div>
 
                                 <div class="form-group">
