@@ -11,7 +11,7 @@
 
             <div class="row mr-0 ml-0 h-100">
                 <h3 class="text-center mt-3">Please Wait: <span id="timer">9</span> </h3>
-                {{ $ad->link }}
+                {!! $ad->link !!}
                 {{-- <iframe src="{{ $ad->link }}" frameborder="0" height="740"></iframe> --}}
             </div>
         </div>
