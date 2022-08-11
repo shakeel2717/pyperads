@@ -67,8 +67,8 @@ class clean extends Command
         $plan->profit = 80;
         $plan->total = '3000';
         $plan->ads = 15;
-        $plan->duration = '360';
-        $plan->withdraw = '600';
+        $plan->duration = 50;
+        $plan->withdraw = 200;
         $plan->status = 1;
         $plan->save();
 
@@ -78,8 +78,8 @@ class clean extends Command
         $plan->profit = 100;
         $plan->total = '18000';
         $plan->ads = 15;
-        $plan->duration = '360';
-        $plan->withdraw = '600';
+        $plan->duration = 180;
+        $plan->withdraw = 1000;
         $plan->status = 1;
         $plan->save();
 
@@ -89,8 +89,8 @@ class clean extends Command
         $plan->profit = 200;
         $plan->total = '36000';
         $plan->ads = 15;
-        $plan->duration = 360;
-        $plan->withdraw = '600';
+        $plan->duration = 180;
+        $plan->withdraw = 2000;
         $plan->status = 1;
         $plan->save();
 
@@ -100,8 +100,8 @@ class clean extends Command
         $plan->profit = 300;
         $plan->total = '54000';
         $plan->ads = 15;
-        $plan->duration = '360';
-        $plan->withdraw = '600';
+        $plan->duration = 180;
+        $plan->withdraw = 3000;
         $plan->status = 1;
         $plan->save();
 
@@ -111,8 +111,8 @@ class clean extends Command
         $plan->profit = 400;
         $plan->total = '72000';
         $plan->ads = 15;
-        $plan->duration = '360';
-        $plan->withdraw = '600';
+        $plan->duration = 180;
+        $plan->withdraw = 4000;
         $plan->status = 1;
         $plan->save();
 
@@ -122,8 +122,8 @@ class clean extends Command
         $plan->profit = 600;
         $plan->total = '108000';
         $plan->ads = 15;
-        $plan->duration = '360';
-        $plan->withdraw = '600';
+        $plan->duration = 180;
+        $plan->withdraw = 8000;
         $plan->status = 1;
         $plan->save();
 
@@ -133,8 +133,8 @@ class clean extends Command
         $plan->profit = 900;
         $plan->total = '168000';
         $plan->ads = 15;
-        $plan->duration = '360';
-        $plan->withdraw = '600';
+        $plan->duration = 210;
+        $plan->withdraw = 8000;
         $plan->status = 1;
         $plan->save();
 
@@ -145,8 +145,8 @@ class clean extends Command
         $plan->profit = 10000;
         $plan->total = '240000';
         $plan->ads = 15;
-        $plan->duration = '360';
-        $plan->withdraw = '600';
+        $plan->duration = 240;
+        $plan->withdraw = 10000;
         $plan->status = 1;
         $plan->save();
 
