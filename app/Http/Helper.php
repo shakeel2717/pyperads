@@ -1,6 +1,7 @@
 <?php
 // generating 6 digit unique user code
 
+use App\Models\Option;
 use App\Models\Transaction;
 use App\Models\User;
 use App\Models\UserPlan;
@@ -102,6 +103,12 @@ function planValidation($user)
     }
 }
 
+
+function options($string)
+{
+    $option = Option::where('type',$string)->first();
+    return $option->value();
+}
 
 function getPlan($user)
 {
