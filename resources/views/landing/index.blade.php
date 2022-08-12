@@ -159,7 +159,7 @@
                                     <li>Plan Duration: <strong>{{ $plan->duration }} Days</strong> <i
                                             class="fa fa-check"></i></li>
                                     <li>Daily Ads: <strong>{{ $plan->ads }}</strong> <i class="fa fa-check"></i></li>
-                                    <li>Direct Commission: <strong>{{ options("commission") }} PKR</strong> <i
+                                    <li>Direct Commission: <strong>{{ options("commission") }}%</strong> <i
                                             class="fa fa-check"></i></li>
                                     <li>Withdraw Limit: <strong>{{ number_format($plan->withdraw, 2) }} PKR</strong> <i
                                             class="fa fa-check"></i></li>

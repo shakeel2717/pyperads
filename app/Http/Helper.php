@@ -107,7 +107,7 @@ function planValidation($user)
 function options($string)
 {
     $option = Option::where('type',$string)->first();
-    return $option->value();
+    return $option->value;
 }
 
 function getPlan($user)
