@@ -26,8 +26,10 @@ Route::prefix('admin/dashboard')->name('admin.')->middleware(['admin'])->group(f
     Route::get('/transaction', [AdminDashboardController::class, 'allTransaction'])->name('allTransaction');
     Route::get('/adminPlans', [AdminDashboardController::class, 'adminplans'])->name('adminplans');
     Route::get('/methods', [AdminDashboardController::class, 'methods'])->name('methods');
+    Route::get('/methods/create', [AdminDashboardController::class, 'methodCreate'])->name('method.create');
     Route::get('/methods/{method}', [AdminDashboardController::class, 'methodsEdit'])->name('method.edit');
     Route::post('/method/store', [AdminDashboardController::class, 'methodsStore'])->name('method.store');
+    Route::post('/method/new/store', [AdminDashboardController::class, 'methodsNewStore'])->name('method.new.store');
     Route::get('/deposite', [AdminDashboardController::class, 'deposite'])->name('deposite');
     Route::get('/withdraw', [AdminDashboardController::class, 'withdraw'])->name('withdraw');
     Route::get('/pending', [AdminDashboardController::class, 'pending'])->name('pending');

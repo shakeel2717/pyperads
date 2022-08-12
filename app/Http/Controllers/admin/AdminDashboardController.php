@@ -193,6 +193,32 @@ class AdminDashboardController extends Controller
         return view('admin.dashboard.methods.index', compact('datas'));
     }
 
+    public function methodCreate()
+    {
+        return view('admin.dashboard.methods.create');
+    }
+
+
+    public function methodsNewStore(Request $request)
+    {
+        $validatedData = $request->validate([
+            'method' => 'required',
+            'name' => 'required',
+            'number' => 'required',
+            'r_number' => 'required',
+            'title' => 'required',
+        ]);
+
+        $method = new Method();
+        $method->method = $validatedData['method'];
+        $method->name = $validatedData['name'];
+        $method->number = $validatedData['number'];
+        $method->r_number = $validatedData['r_number'];
+        $method->title = $validatedData['title'];
+        $method->save();
+
+        return redirect()->back()->with('status', 'New Method Added Successfully');
+    }
 
     public function methodsEdit($method)
     {
