@@ -10,7 +10,7 @@
             </div>
 
             <div class="row mr-0 ml-0 h-100">
-                <h3 class="text-center mt-3">Please Wait: <span id="timer">9</span> </h3>
+                <h3 class="text-center mt-3">Please Wait: <span id="timer">25</span> </h3>
                 {!! $ad->link !!}
                 {{-- <iframe src="{{ $ad->link }}" frameborder="0" height="740"></iframe> --}}
             </div>
@@ -19,7 +19,7 @@
 @endsection
 @section('footer')
     <script>
-        var time = 9;
+        var time = 25;
         var interval = setInterval(function() {
             time--;
             document.getElementById("timer").innerHTML = time;
