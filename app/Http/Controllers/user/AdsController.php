@@ -7,6 +7,7 @@ use App\Models\Ads;
 use App\Models\Plan;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
+use Carbon\Carbon;
 
 class AdsController extends Controller
 {
@@ -68,6 +69,14 @@ class AdsController extends Controller
         $ad = Ads::find($id);
         $plan = Plan::find(getPlan(auth()->user()->id));
         $calc = $plan->profit / $plan->ads;
+
+        // checking if user already watch this ad
+        $transactionSecurity = Transaction::where('user_id', auth()->user()->id)->where('type','daily ads')->where('sum','in')->where('ad_id',$id)->whereDate('created_at', Carbon::today())->count();
+        if($transactionSecurity > 0){
+            return redirect()->route('user.dashboard')->withErrors('This Ads Already Watched, If you try to cheat again, your account will be suspended.');
+        }
+
+
         // inserting a deposit transaction
         $transaction = new Transaction();
         $transaction->user_id = auth()->user()->id;
